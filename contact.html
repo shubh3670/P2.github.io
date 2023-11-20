@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <header>
+            <div><a href="index.html">HOMEPAGE</a></div>
+            <div><a href="brief.html">BRIEF</a></div>
+            <div><a href="experience.html">    EXPERIENCE  </a> </div>
+            <div> <a href="contact.html">REACH ME</a></div>
+        </header>
+    </head>
+    <body id="body" onload="cofunct()">
+
+        <div>
+            <button onclick="Mode()" id="b1">Mode</button>
+        </div>
+        <div id="C1">
+            <center>
+            <h1 id="C11" S>CONTACT ME</h1></center>
+            <div class="container">
+                <form onsubmit="sendEmail(); reset(); return false;  " id="form" >
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Email Id" required>
+                    <input type="text" id="phone" placeholder="Phone no." required>
+                    <textarea id="message" rows="4" placeholder="Message"></textarea>
+                    <button type="Submit">Send</button>
+                </form>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+             </div>
+        </div>
+        <script src="funct.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+                function sendEmail(){
+                    Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "shubhpatel6001@gmail.com",
+    Password : "A84F672086BD0A4ACB6702C6EE5422CB318E",
+    To : 'shubhpatel6001@gmail.com',
+    From : 'shubhpatel6001@gmail.com',
+    Subject : "New Contact Form",
+    Body : "  Name = "+document.getElementById('name').value
+    + "  Email = "+document.getElementById("email").value + "  Phone Number = "+document.getElementById("phone").value +"  Message = "+document.getElementById("message").value
+}).then(
+  message => alert(message)
+);
+                }
+        </script>
+    </body>
+</html>
